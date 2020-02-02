@@ -1,4 +1,4 @@
-# SapphireDb: Example-Svelte (using sapphiredb)
+# SapphireDb: Example-React (using sapphiredb)
 
 **Example React application using SapphireDb** 
 
