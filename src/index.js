@@ -143,7 +143,7 @@ function App() {
                             <h3>Chat between '{userState.currentUser.username}' and '{userState.chatPartner.username}'</h3>
                             <h4>Message</h4>
                             {messages && messages.value.map(message => (
-                                <div style={{textAlign: message.ownerId === userState.currentUser.id ? 'right' : 'left'}}>{message.content} ({message.createdOn})</div>
+                                <div key={message.id} style={{textAlign: message.ownerId === userState.currentUser.id ? 'right' : 'left'}}>{message.content} ({message.createdOn})</div>
                             ))}
                             <label>
                                 New Message:
