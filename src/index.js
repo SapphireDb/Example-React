@@ -111,7 +111,7 @@ function App() {
             <h1>Example React application using SapphireDb</h1>
             <h2>Basic example</h2>
 
-            {examples?.value.map(example => (
+            {examples && examples.value.map(example => (
                 <div key={example.id}>
                     {JSON.stringify(example)}
                     <button onClick={() => updateExample(example)}>Update</button>
@@ -124,7 +124,7 @@ function App() {
             <h2>Chat</h2>
             <h3>Users</h3>
 
-            {users?.value.map(user => (
+            {users && users.value.map(user => (
                 <button key={user.id} onClick={() => setUser(user)}>{user.username}</button>
             ))}
 
@@ -134,7 +134,7 @@ function App() {
                 <div>
                     <h3>You are {userState.currentUser.username}</h3>
                     <h4>Select chat partner</h4>
-                    {chatPartners?.value.map(partner => (
+                    {chatPartners && chatPartners.value.map(partner => (
                         <button key={partner.id} onClick={() => setChatPartner(partner)}>{partner.username}</button>
                     ))}
 
@@ -142,7 +142,7 @@ function App() {
                         <div>
                             <h3>Chat between '{userState.currentUser.username}' and '{userState.chatPartner.username}'</h3>
                             <h4>Message</h4>
-                            {messages?.value.map(message => (
+                            {messages && messages.value.map(message => (
                                 <div style={{textAlign: message.ownerId === userState.currentUser.id ? 'right' : 'left'}}>{message.content} ({message.createdOn})</div>
                             ))}
                             <label>
